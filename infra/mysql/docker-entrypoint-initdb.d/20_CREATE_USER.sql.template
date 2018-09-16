@@ -1,0 +1,4 @@
+CREATE USER 'tuzigiri_app'@'%' IDENTIFIED BY '###APP_USER_PASSWORD###';
+CREATE USER 'tuzigiri_migrator'@'%' IDENTIFIED BY '###MIGRATOR_PASSWORD###';
+
+GRANT ALL PRIVILEGES ON *.* TO 'tuzigiri_migrator'@'%' WITH GRANT OPTION;

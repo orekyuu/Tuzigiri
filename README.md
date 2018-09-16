@@ -46,7 +46,13 @@ cd Tuzigiri/infra
 docker-compose up -d
 ```
 
-2. Springの立ち上げ
+2. hostsの設定
+
+```
+127.0.0.1   tuzigiri-db
+```
+
+3. Springの立ち上げ
 
 ```
 ./gradlew bootRun

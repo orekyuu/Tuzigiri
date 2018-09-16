@@ -1,0 +1,18 @@
+version: '2'
+services:
+  tuzigiri-db:
+    build:
+      context: ./mysql
+      args:
+        MYSQL_ROOT_PASSWORD: "password"
+        MIGRATOR_PASSWORD: "password"
+        APP_USER_PASSWORD: "password"
+    image: tuzigiri-dev-db:latest
+    container_name: tuzigiri-dev-db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/db:/var/lib/mysql
+      - ./mysql/log:/var/log/mysql
+    environment:
+      ENV: "local"

@@ -16,3 +16,19 @@ services:
       - ./infra/mysql/log:/var/log/mysql
     environment:
       ENV: "local"
+  tuzigiri-app:
+    build: .
+    image: tuzigiri-app:latest
+    container_name: tuzigiri-app
+    ports:
+      - "8080:8080"
+    links:
+      - tuzigiri-db
+  tuzigiri-web:
+    build: ./infra/nginx
+    image: tuzigiri-web:latest
+    container_name: tuzigiri-web
+    ports:
+      - "80:80"
+    links:
+      - tuzigiri-app

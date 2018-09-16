@@ -37,6 +37,7 @@ docker-compose up
 
 - Docker
 - JDK 10+
+- vue-cli
 
 ## ビルド手順
 

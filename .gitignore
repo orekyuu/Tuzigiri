@@ -1,2 +1,4 @@
 infra/mysql/db/*
 infra/mysql/log/*
+
+.idea/

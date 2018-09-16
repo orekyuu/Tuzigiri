@@ -43,3 +43,6 @@ dependencies {
 processResources.destinationDir = compileJava.destinationDir
 // コンパイルより前にSQLファイルを出力先ディレクトリにコピーするために依存関係を逆転する
 compileJava.dependsOn processResources
+
+archivesBaseName = 'tuzigiri'
+version = null

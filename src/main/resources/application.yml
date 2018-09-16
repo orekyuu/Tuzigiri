@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tuzigiri_dev
+    username: root
+    password: password
+    driver-class-name: com.mysql.jdbc.Driver

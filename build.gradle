@@ -30,7 +30,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-security')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.flywaydb:flyway-core')
-    compile('org.seasar.doma:doma:+')
+    compile('org.seasar.doma.boot:doma-spring-boot-starter:+')
     compile('org.springframework.security:spring-security-oauth2-client:+')
     compile('org.springframework.security:spring-security-oauth2-jose:+')
     runtime('org.springframework.boot:spring-boot-devtools')

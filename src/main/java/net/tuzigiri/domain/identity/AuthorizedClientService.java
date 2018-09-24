@@ -51,7 +51,7 @@ public class AuthorizedClientService implements OAuth2AuthorizedClientService {
         //FIXME: 名前を取る方法が辛い。
         String name = (String) ((DefaultOAuth2User) principal.getPrincipal()).getAttributes().get("name");
         Account account = new Account(Id.notAssigned(), name);
-        signupService.signup(account, accessToken, new AuthorizedClientId(principalName, registrationId));
+        signupService.trySignup(account, accessToken, new AuthorizedClientId(principalName, registrationId));
     }
 
     @Override

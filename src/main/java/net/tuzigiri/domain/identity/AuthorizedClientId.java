@@ -8,9 +8,9 @@ import java.util.Objects;
 @Embeddable
 public class AuthorizedClientId {
     @Column(name = "principal_name")
-    private String principalName;
+    private final String principalName;
     @Column(name = "registration_id")
-    private String registrationId;
+    private final String registrationId;
 
     public AuthorizedClientId(String principalName, String registrationId) {
         this.principalName = principalName;
@@ -21,16 +21,8 @@ public class AuthorizedClientId {
         return principalName;
     }
 
-    public void setPrincipalName(String principalName) {
-        this.principalName = principalName;
-    }
-
     public String getRegistrationId() {
         return registrationId;
-    }
-
-    public void setRegistrationId(String registrationId) {
-        this.registrationId = registrationId;
     }
 
     @Override

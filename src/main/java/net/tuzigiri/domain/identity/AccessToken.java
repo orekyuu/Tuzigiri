@@ -11,11 +11,11 @@ import java.time.ZoneOffset;
 @Embeddable
 public class AccessToken {
     @Column(name = "token_value")
-    private String tokenValue;
+    private final String tokenValue;
     @Column(name = "issued_at")
-    private LocalDateTime issuedAt;
+    private final LocalDateTime issuedAt;
     @Column(name = "expires_at")
-    private LocalDateTime expiresAt;
+    private final LocalDateTime expiresAt;
 
     public AccessToken(String tokenValue, LocalDateTime issuedAt, LocalDateTime expiresAt) {
         this.tokenValue = tokenValue;
@@ -36,23 +36,12 @@ public class AccessToken {
         return tokenValue;
     }
 
-    public void setTokenValue(String tokenValue) {
-        this.tokenValue = tokenValue;
-    }
-
     public LocalDateTime getIssuedAt() {
         return issuedAt;
-    }
-
-    public void setIssuedAt(LocalDateTime issuedAt) {
-        this.issuedAt = issuedAt;
     }
 
     public LocalDateTime getExpiresAt() {
         return expiresAt;
     }
 
-    public void setExpiresAt(LocalDateTime expiresAt) {
-        this.expiresAt = expiresAt;
-    }
 }

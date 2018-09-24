@@ -1,1 +1,1 @@
-select * from hoge where id = /*authorizedClientId.principalName*/'';
+select /*expand*/* from hoge where id = /*authorizedClientId.principalName*/'';

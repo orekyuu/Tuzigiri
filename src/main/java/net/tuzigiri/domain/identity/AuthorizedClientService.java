@@ -25,7 +25,7 @@ public class AuthorizedClientService implements OAuth2AuthorizedClientService {
     @Override
     @SuppressWarnings("unchecked")
     public <T extends OAuth2AuthorizedClient> T loadAuthorizedClient(String clientRegistrationId, String principalName) {
-        OAuth2AuthorizedClient client = auhorizedClientDao.findByAuhorizedClientId(new AuthorizedClientId(principalName, clientRegistrationId))
+        OAuth2AuthorizedClient client = auhorizedClientDao.findByAuthorizedClientId(new AuthorizedClientId(principalName, clientRegistrationId))
                 .map(it -> {
                     ClientRegistration clientRegistration = ClientRegistration.withRegistrationId(clientRegistrationId).build();
                     AuthorizedClientId clientId = it.getAuthorizedClientId();

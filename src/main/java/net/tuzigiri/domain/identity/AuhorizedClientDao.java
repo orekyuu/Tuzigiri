@@ -15,5 +15,5 @@ public interface AuhorizedClientDao {
     Result<AuthorizedClient> insert(AuthorizedClient client);
 
     @Select
-    Optional<AuthorizedClient> findByAuhorizedClientId(AuthorizedClientId authorizedClientId);
+    Optional<AuthorizedClient> findByAuthorizedClientId(AuthorizedClientId authorizedClientId);
 }

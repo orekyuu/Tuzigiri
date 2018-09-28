@@ -59,6 +59,13 @@ docker-compose up -d
 ./gradlew bootRun
 ```
 
+4. Nuxtの立ち上げ
+
+```
+npm install #初回のみ
+npm run dev
+```
+
 ## 動作確認
 
 [http://localhost/](http://localhost/)にアクセスします。

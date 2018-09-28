@@ -13,27 +13,27 @@ import java.util.Optional;
 @Transactional
 public class SignupService {
     private final AccountDao accountDao;
-    private final AuhorizedClientDao auhorizedClientDao;
+    private final AuthorizedClientDao authorizedClientDao;
 
-    public SignupService(AccountDao accountDao, AuhorizedClientDao auhorizedClientDao) {
+    public SignupService(AccountDao accountDao, AuthorizedClientDao authorizedClientDao) {
         this.accountDao = accountDao;
-        this.auhorizedClientDao = auhorizedClientDao;
+        this.authorizedClientDao = authorizedClientDao;
     }
 
     public void trySignup(Account account, AccessToken accessToken, AuthorizedClientId clientId) {
-        Optional<AuthorizedClient> authorizedClient = auhorizedClientDao.findByAuthorizedClientId(clientId);
+        Optional<AuthorizedClient> authorizedClient = authorizedClientDao.findByAuthorizedClientId(clientId);
         authorizedClient.ifPresentOrElse(
                 it -> updateAuthorizedClient(accessToken, clientId),
                 () -> registerAccount(account, accessToken, clientId));
     }
 
     private void updateAuthorizedClient(AccessToken accessToken, AuthorizedClientId clientId) {
-        auhorizedClientDao.updateAccessToken(clientId, accessToken);
+        authorizedClientDao.updateAccessToken(clientId, accessToken);
     }
 
     private void registerAccount(Account account, AccessToken accessToken, AuthorizedClientId clientId) {
         Result<Account> accountResult = accountDao.insert(account);
         AuthorizedClient client = new AuthorizedClient(Id.notAssigned(), accountResult.getEntity().getId(), clientId, accessToken);
-        auhorizedClientDao.insert(client);
+        authorizedClientDao.insert(client);
     }
 }

@@ -13,11 +13,11 @@ import java.time.ZoneOffset;
 
 @Component
 public class AuthorizedClientService implements OAuth2AuthorizedClientService {
-    private final AuhorizedClientDao auhorizedClientDao;
+    private final AuthorizedClientDao authorizedClientDao;
     private final SignupService signupService;
 
-    public AuthorizedClientService(AuhorizedClientDao auhorizedClientDao, SignupService signupService) {
-        this.auhorizedClientDao = auhorizedClientDao;
+    public AuthorizedClientService(AuthorizedClientDao authorizedClientDao, SignupService signupService) {
+        this.authorizedClientDao = authorizedClientDao;
         this.signupService = signupService;
     }
 
@@ -25,7 +25,7 @@ public class AuthorizedClientService implements OAuth2AuthorizedClientService {
     @Override
     @SuppressWarnings("unchecked")
     public <T extends OAuth2AuthorizedClient> T loadAuthorizedClient(String clientRegistrationId, String principalName) {
-        OAuth2AuthorizedClient client = auhorizedClientDao.findByAuthorizedClientId(new AuthorizedClientId(principalName, clientRegistrationId))
+        OAuth2AuthorizedClient client = authorizedClientDao.findByAuthorizedClientId(new AuthorizedClientId(principalName, clientRegistrationId))
                 .map(it -> {
                     ClientRegistration clientRegistration = ClientRegistration.withRegistrationId(clientRegistrationId).build();
                     AuthorizedClientId clientId = it.getAuthorizedClientId();

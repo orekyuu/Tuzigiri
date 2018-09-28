@@ -11,7 +11,7 @@ import java.util.Optional;
 
 @Dao
 @ConfigAutowireable
-public interface AuhorizedClientDao {
+public interface AuthorizedClientDao {
     @Insert
     Result<AuthorizedClient> insert(AuthorizedClient client);
 

@@ -16,6 +16,7 @@ services:
       - ./infra/mysql/log:/var/log/mysql
     environment:
       ENV: "local"
+      TZ: "Asia/Tokyo"
   tuzigiri-app:
     build: .
     image: tuzigiri-app:latest

@@ -1,7 +1,6 @@
 package net.tuzigiri.config;
 
 import net.tuzigiri.domain.identity.AuthorizedClientService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;

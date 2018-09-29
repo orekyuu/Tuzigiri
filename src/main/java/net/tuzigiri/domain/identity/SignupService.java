@@ -2,8 +2,6 @@ package net.tuzigiri.domain.identity;
 
 import net.tuzigiri.util.Id;
 import org.seasar.doma.jdbc.Result;
-import org.seasar.doma.jdbc.UniqueConstraintException;
-import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

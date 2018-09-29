@@ -14,11 +14,6 @@ ENV MIGRATOR_PASSWORD $MIGRATOR_PASSWORD
 
 ADD ./docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
 
-RUN  /usr/bin/mysql_tzinfo_to_sql /usr/share/zoneinfo > /docker-entrypoint-initdb.d/timezone.sql
-
-
-ADD ./timezone.cnf /etc/mysql/mysql.conf.d/
-
 RUN set -x &&\
   sed -e "s/###APP_USER_PASSWORD###/$APP_USER_PASSWORD/g" \
       -e "s/###MIGRATOR_PASSWORD###/$MIGRATOR_PASSWORD/g" \

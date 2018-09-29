@@ -5,7 +5,6 @@ import org.seasar.doma.Embeddable;
 import org.springframework.security.oauth2.core.OAuth2AccessToken;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.ZoneOffset;
 
 @Embeddable

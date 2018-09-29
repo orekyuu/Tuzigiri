@@ -11,7 +11,7 @@ import java.util.Objects;
  */
 @Domain(factoryMethod = "of", valueType = Long.class)
 public class Id<T> implements Serializable, Comparable {
-    private static final long serialVersionUId = 1L;
+    private static final long serialVersionUID = 1L;
     private static final Id<Object> NOT_ASSIGNED = new Id<>(-1);
     private final long value;
 

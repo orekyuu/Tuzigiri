@@ -33,7 +33,7 @@ dependencies {
     compile('org.seasar.doma.boot:doma-spring-boot-starter:1.1.1')
     compile('org.seasar.doma:doma:2.19.3')
     compile('org.springframework.security:spring-security-oauth2-client:5.0.8.RELEASE')
-    compile('org.springframework.security:spring-security-oauth2-jose:5.1.0.RELEASE')
+    compile('org.springframework.security:spring-security-oauth2-jose:5.0.8.RELEASE')
     runtime('org.springframework.boot:spring-boot-devtools')
     runtime('mysql:mysql-connector-java:5.1.47')
     testCompile('org.springframework.boot:spring-boot-starter-test')

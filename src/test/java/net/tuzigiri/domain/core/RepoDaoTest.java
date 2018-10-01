@@ -2,14 +2,15 @@ package net.tuzigiri.domain.core;
 
 import net.tuzigiri.domain.identity.Account;
 import net.tuzigiri.domain.identity.AccountDao;
-import net.tuzigiri.util.DomaTest;
 import net.tuzigiri.util.Id;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.seasar.doma.jdbc.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 
@@ -17,7 +18,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 @RunWith(SpringRunner.class)
-@DomaTest
+@SpringBootTest
+@Transactional
 public class RepoDaoTest {
 
     @Autowired

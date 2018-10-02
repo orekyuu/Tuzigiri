@@ -17,7 +17,7 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'net.tuzigiri'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 10
+sourceCompatibility = 11
 
 repositories {
     mavenCentral()

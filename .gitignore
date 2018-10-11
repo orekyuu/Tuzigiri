@@ -1,5 +1,6 @@
 infra/mysql/db/*
 infra/mysql/log/*
+infra/nginx/log/*
 
 .idea/
 

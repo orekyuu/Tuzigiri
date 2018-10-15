@@ -36,7 +36,7 @@ docker-compose up
 ## ビルドに必要なもの
 
 - Docker
-- JDK 10+
+- JDK 11+
 
 ## ビルド手順
 

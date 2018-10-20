@@ -51,6 +51,8 @@ docker-compose up -d
 
 ```
 127.0.0.1   tuzigiri-db
+127.0.0.1   api.tuzigiri.localhost #例です
+127.0.0.1   tuzigiri.localhost #例です
 ```
 
 3. Springの立ち上げ
@@ -68,5 +70,5 @@ npm run dev
 
 ## 動作確認
 
-[http://localhost/](http://localhost/)にアクセスします。
+[http://tuzigiri.localhost/](http://tuzigiri.localhost/)にアクセスします。
 

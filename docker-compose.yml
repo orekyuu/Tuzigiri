@@ -17,19 +17,26 @@ services:
     environment:
       ENV: "local"
       TZ: "Asia/Tokyo"
-  tuzigiri-app:
+  tuzigiri-backend:
     build: .
-    image: tuzigiri-app:latest
-    container_name: tuzigiri-app
+    image: tuzigiri-backend:latest
+    container_name: tuzigiri-backend
     ports:
       - "8080:8080"
-    links:
-      - tuzigiri-db
+  tuzigiri-frontend:
+    build: ./frontend
+    image: tuzigiri-frontend:latest
+    container_name: tuzigiri-frontend
+    environment:
+      HOST: '0.0.0.0'
+      PORT: 3000
+    ports:
+      - "3000:3000"
   tuzigiri-web:
     build: ./infra/nginx
     image: tuzigiri-web:latest
     container_name: tuzigiri-web
+    volumes:
+      - ./infra/nginx/log:/var/log/nginx
     ports:
       - "80:80"
-    links:
-      - tuzigiri-app
